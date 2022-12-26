@@ -1,0 +1,8 @@
+- Because psp34::Id doesn't implement Default trait, it cannot be used as a field of structs.
+  For now, using openbrush-contracts forked branch and implement Default trait by myself.
+
+- Access Control, following Open brush access control specification. Admin can manage roles,
+  multiple accounts can have a same role.
+
+- Right now, ink! can allow event definition in root contract file only `#[ink(event)]`.
+  Once this limitation eliminated, there's no need to have emit_event function for each Internal trait.
