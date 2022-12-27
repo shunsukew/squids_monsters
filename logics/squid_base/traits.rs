@@ -18,7 +18,7 @@ pub const SQUID_STORAGE_KEY: u32 = openbrush::storage_unique_key!(Squid);
 pub struct Squid {
     pub genes: u64, // genetic code packed into 64 bits
     pub birth_time: u64,
-    pub cooldown_end_block: u64,
+    pub cooldown_end_block: u32,
     pub matron_id: Id,
     pub sire_id: Id,
     pub siring_with_id: u32, // if set then pregnant

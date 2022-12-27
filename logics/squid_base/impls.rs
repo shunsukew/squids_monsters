@@ -1,6 +1,8 @@
 use crate::traits::*;
 use openbrush::{
-    contracts::psp34::{Id, self},
+    contracts::{
+        psp34::{Id, self}
+    },
     storage::{
         Mapping,
     },
@@ -17,7 +19,7 @@ pub const DATA_STORAGE_KEY: u32 = openbrush::storage_unique_key!(Data);
 pub struct Data {
     pub next_squid_id: u32,
     pub squids: Mapping<Id, Squid>,
-    pub sire_allowed_to_address: Mapping<Id, AccountId>,
+    pub sire_allowed_to_account_id: Mapping<Id, AccountId>,
     // The address of the ClockAuction contract that handles sales of Squids.
     pub sale_clock_auction: AccountId,  
     // The address of a custom ClockAuction subclassed contract that handles siring auctions.
@@ -46,7 +48,6 @@ pub trait Internal {
 impl<T> Internal for T
 where
     T: Storage<Data>,
-    T: psp34::PSP34,
     T: psp34::Internal,
 {
     default fn _create_squid(
@@ -93,4 +94,3 @@ where
 
     default fn _emit_birth_event(&self, _owner: AccountId, _new_squid_id: &Id, _matron_id: &Id, _sire_id: &Id, _genes: u64) {}
 }
-

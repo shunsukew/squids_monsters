@@ -18,6 +18,8 @@ scale-info = { version = "2", default-features = false, features = ["derive"], o
 openbrush = { branch = "v2.3.0-squids", git = "https://github.com/shunsukew/openbrush-contracts", default-features = false, features = ["access_control", "pausable", "psp34", "reentrancy_guard"] }
 
 squid_base = { path = "../../logics/squid_base", default-features = false }
+squid_breeding = { path = "../../logics/squid_breeding", default-features = false }
+helpers = { path = "../../logics/helpers", default-features = false }
 
 [lib]
 name = "squid_core"
@@ -37,6 +39,8 @@ std = [
     "scale/std",
     "scale-info/std",
     "openbrush/std",
-    "squid_base/std"
+    "squid_base/std",
+    "squid_breeding/std",
+    "helpers/std",
 ]
 ink-as-dependency = []

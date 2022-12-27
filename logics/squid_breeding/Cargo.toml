@@ -1,5 +1,5 @@
 [package]
-name = "squid_base"
+name = "squid_breeding"
 version = "0.1.0"
 authors = ["Shunsuke Watanabe"]
 edition = "2021"
@@ -17,8 +17,11 @@ scale-info = { version = "2", default-features = false, features = ["derive"], o
 
 openbrush = { branch = "v2.3.0-squids", git = "https://github.com/shunsukew/openbrush-contracts", default-features = false, features = ["psp34"] }
 
+squid_base = { path = "../squid_base", default-features = false }
+helpers = { path = "../helpers", default-features = false }
+
 [lib]
-name = "squid_base"
+name = "squid_breeding"
 path = "lib.rs"
 crate-type = [
     "rlib",
@@ -37,4 +40,6 @@ std = [
     "scale-info",
     "scale-info/std",
     "openbrush/std",
+    "squid_base/std",
+    "helpers/std",
 ]
